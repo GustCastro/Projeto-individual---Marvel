@@ -6,6 +6,7 @@
   font-family: "Anton SC", sans-serif;
   font-weight: 100;
   font-style: normal;
+  scroll-behavior: smooth;
 }
 .nav_container {
   display: flex;
@@ -46,4 +47,46 @@
   justify-content: flex-end;
   align-items: center;
   width: 35%;
+}
+.container-banner {
+  height: 90vh;
+  position: relative;
+  overflow: hidden;
+  background: url("../src/videoplayback.gif") no-repeat fixed center center;
+  background-size: cover;
+}
+.banner {
+  display: flex;
+  color: #ffffff;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+}
+.container-banner h1 {
+  color: #f01f1a;
+  font-size: 80px;
+}
+.container-banner span {
+  color: #ffffff;
+  border-bottom: 6px solid #ffffff;
+  border-top: 6px solid #ffffff;
+  padding: -10vw;
+}
+.container-banner p {
+  display: flex;
+  font-size: 20px;
+  margin-top: 20px;
+}
+.container_marvel {
+  display: flex;
+  height: 40vh;
+}
+.sobre_marvel {
+  background: url("https://www.clickguarulhos.com.br/wp-content/uploads/2018/11/20181114-imagem_release_1504459-2.jpg")
+    fixed;
+  background: cover;
+  color: #ffffff;
 }
