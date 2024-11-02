@@ -3,23 +3,36 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="login.html" />
+    <link rel="stylesheet" href="../CSS/login.css" />
     <title>Login - Legends Marvel</title>
   </head>
   <body>
-    <h2>Acesse sua conta, Lenda!</h2>
-    <form>
-      <label for="email">Email</label>
-      <input type="text" id="email" />
-      <br /><br />
-      <label for="senha">Senha</label>
-      <input type="text" id="senha" />
-      <br /><br />
-      <button>Entrar</button>
-      <br /><br />
-      <span
-        ><p>Não tem uma conta? <a href="">Cadastre-se!</a></p></span
-      >
-    </form>
+    <section class="main-container">
+      <!-- Imagem à esquerda com link para a homepage -->
+      <div class="container_img">
+        <a href="../Homepage/index.html">
+          <img src="../imgs/background2.jpg" alt="Background Marvel" />
+        </a>
+      </div>
+
+      <!-- Formulário de Login -->
+      <form class="container_form">
+        <h2>Acesse sua conta, <span class="title">Lenda!</span></h2>
+
+        <div class="div_email">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="Seu email" required />
+        </div>
+
+        <div class="div_senha">
+          <label for="senha">Senha</label>
+          <input type="password" id="senha" placeholder="Sua senha" required />
+        </div>
+        <br />
+        <button class="button">Entrar</button>
+        <br />
+        <p>Não tem uma conta? <a href="#">Cadastre-se!</a></p>
+      </form>
+    </section>
   </body>
 </html>
