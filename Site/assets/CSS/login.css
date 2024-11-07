@@ -6,14 +6,10 @@
   box-sizing: border-box;
   font-family: "Anton", sans-serif;
   font-weight: 100;
-  scroll-behavior: smooth;
   text-decoration: none;
 }
-
-section {
-  display: flex;
-  width: 100vw;
-  height: 100vh;
+html {
+  scroll-behavior: smooth;
 }
 
 .main-container {
@@ -25,6 +21,7 @@ section {
 .container_img {
   display: flex;
   width: 80%;
+  height: 100vh;
 }
 .container_img a {
   display: flex;

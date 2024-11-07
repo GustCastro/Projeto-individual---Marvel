@@ -6,8 +6,11 @@
   font-family: "Anton", sans-serif;
   font-weight: 100;
   font-style: normal;
+}
+html {
   scroll-behavior: smooth;
 }
+
 .nav_container {
   display: flex;
   width: 100%;
@@ -18,6 +21,7 @@
   align-items: center;
   flex-direction: row;
   z-index: 1000;
+  border-bottom: 2px solid #f01f1a;
 }
 .nav_menu {
   display: flex;
@@ -49,17 +53,18 @@
   width: 35%;
 }
 .container-banner {
-  height: 85vh;
+  height: 100vh;
   position: relative;
   overflow: hidden;
   background: url("../src/videoplayback.gif") no-repeat fixed center center;
   background-size: cover;
+  border-bottom: 2px solid #f01f1a;
 }
 .banner {
   display: flex;
   color: #ffffff;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -80,13 +85,127 @@
   font-size: 20px;
   margin-top: 20px;
 }
-.container_marvel {
-  display: flex;
-  height: 40vh;
+#titulo_herois {
+  flex-direction: row;
+  text-align: center;
+  font-size: 40px;
+  background: transparent;
+  color: #f01f1a;
+  padding: 20px;
 }
-.sobre_marvel {
-  background: url("https://www.clickguarulhos.com.br/wp-content/uploads/2018/11/20181114-imagem_release_1504459-2.jpg")
-    fixed;
-  background: cover;
+.herois {
+  background: url("../imgs/fundo.jpg") no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  padding-top: 40px;
+}
+.container_herois {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100vh;
+  padding: 20px;
+  gap: 20px;
+}
+
+.container_wolverine,
+.container_iron-man,
+.container_spyder-man,
+.container_capitão {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  width: 100%;
+  height: 70vh;
+  border: 2px solid #f01f1a;
+  border-top-left-radius: 30px;
+  background-color: #ffffff9d;
+  border-bottom-right-radius: 30px;
+  margin-bottom: 60px;
+}
+
+.titulo_herois_containers {
+  border-bottom-right-radius: 30px;
+  position: absolute;
+  margin: 0 auto;
+  width: 100%;
+  height: fit-content;
+  justify-content: center;
+  border: none;
+  align-items: center;
+  color: #f01f1a;
+  flex-direction: row;
+  background-color: black;
+  font-size: 20px;
+  z-index: 10;
+  text-align: center;
+  left: 0;
+  right: 0;
+  bottom: 10px;
+}
+.container_wolverine img {
+  width: 100%;
+  height: fit-content;
+  background-size: contain;
+  background-position: center;
+}
+.container_iron-man img {
+  width: 100%;
+  height: fit-content;
+  background-size: contain;
+  background-position: center;
+}
+
+.container_spyder-man img {
+  width: 100%;
+  height: fit-content;
+  background-size: contain;
+  background-position: center;
+}
+
+.container_capitão img {
+  width: 100%;
+  height: fit-content;
+  background-size: contain;
+  background-position: center;
+}
+.container_textos {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  text-align: left;
+  gap: 20px;
+  padding: 20px;
+  color: black;
+  background-color: #f01f1a;
+  height: fit-content; /* Altura mínima de 70% da viewport */
+}
+
+.titulo_lenda {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-size: 24px;
+  text-align: left; /* Centraliza o título */
+  margin-bottom: 10px;
+}
+
+.container_textos p {
+  font-size: 16px; /* Tamanho proporcional ao viewport */
+  text-align: left; /* Alinha o texto à esquerda */
+  margin-top: 10px;
+}
+
+.sobre_wolverine,
+.sobre_iron-man,
+.sobre_spyder-man,
+.sobre_capitão {
+  height: fit-content;
+  background-color: black;
   color: #ffffff;
+  padding: 20px;
+  margin-top: 20px; /* Para espaçamento entre as caixas, se necessário */
 }
