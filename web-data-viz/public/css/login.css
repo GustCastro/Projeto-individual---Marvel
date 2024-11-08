@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Anton", sans-serif;
+  font-weight: 100;
+  text-decoration: none;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+.main-container {
+  display: flex;
+  height: 100vh;
+  background-color: black;
+}
+
+.container_img {
+  display: flex;
+  width: 80%;
+  height: 100vh;
+}
+.container_img a {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.container_img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.container_form {
+  display: flex;
+  width: 35%;
+  color: #fff;
+  background-color: black;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+
+h2 {
+  margin-bottom: 40px; /* Ajusta o espaçamento abaixo do título */
+  font-size: 30px;
+}
+
+.div_email,
+.div_senha {
+  width: 100%;
+  margin-bottom: 20px; /* Aumenta o espaçamento entre os campos */
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  text-align: left;
+}
+
+.div_email input,
+.div_senha input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #fff;
+  background-color: transparent;
+  border-radius: 5px;
+  color: #fff;
+  transition: background-color 0.4s;
+  font-family: sans-serif;
+}
+
+.div_email input:focus,
+.div_senha input:focus {
+  outline: none; /* Remove a borda padrão do navegador */
+}
+
+.button {
+  width: 100%;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #f01f1a;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.4s;
+}
+.title {
+  color: #f01f1a;
+}
+
+button:hover {
+  background-color: #fff;
+  color: #f01f1a;
+}
+
+input:hover {
+  background-color: #f01f1a;
+  color: #fff;
+  border: 1px solid transparent;
+}
+
+input:hover::placeholder {
+  color: #fff;
+}
+p {
+  font-size: 14px;
+}
+a {
+  color: #f01f1a;
+}
+a:hover {
+  text-decoration: underline;
+  font-style: italic;
+}

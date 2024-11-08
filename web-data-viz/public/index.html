@@ -1,82 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>AquaTech | Página Inicial</title>
-
-    <script src="./js/sessao.js"></script>
-
-    <link rel="stylesheet" href="./css/estilo.css">
-    <link rel="icon" href="./assets/icon/favicon2.ico">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-</head>
-
-<body>
-    <div class="header">
-      <div class="container">
-        <h1 class="titulo">AquaTech</h1>
-        <ul class="navbar">
-          <li class="agora">
-            <a href="#">Inicial</a>
-          </li>
-          <li>
-            <a href="simulador.html">Simulador</a>
-          </li>
-          <li>|</li>
-          <li>
-            <a href="login.html">Login</a>
-          </li>
-          <li>
-            <a href="cadastro.html">Cadastro</a>
-          </li>
-        </ul>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Legends Marvel</title>
+    <link rel="stylesheet" href="../public/css/index.css" />
+  </head>
+  <body>
+    <!-- Menu: heder da página -->
+    <header>
+      <div class="nav_container">
+        <div class="img_nav">
+          <img
+            src="https://cdn.worldvectorlogo.com/logos/marvel.svg"
+            alt="Logo_marvel"
+          />
+        </div>
+        <div class="nav_menu">
+          <a href="">Home</a>
+          <a href="">Sobre mim</a>
+          <a href="">Heróis</a>
+          <a href="">Quiz</a>
+        </div>
+        <div class="nav_login_cadastro">
+          <a href="../public/login.html">Login</a>
+          <a href="../public/cadastro.htm">Cadastro</a>
+        </div>
+      </div>
+    </header>
+    <div class="container-banner">
+      <div class="banner">
+        <h1>Legends <span>Marvel</span></h1>
+        <p>Conheça um pouco sobre as maiores lendas do universo marvel!</p>
       </div>
     </div>
-  
-    <div class="banner">
-      <div class="container">
-        <p>Preservando <span>hoje</span> para existirem <span>amanhã</span>.</p>
-      </div>
-    </div>
-  
-    <div class="social">
-      <div class="container">
-        <div class="boxes">
-          <div class="box">
-            <img src="assets/imgs/planet-earth_color.png">
-            <h4>Missão</h4>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et, quas cupiditate asperiores provident magnam
-              vitae illum iusto fugiat atque deleniti nulla sed iure suscipit, laborum, aliquid accusantium cum dicta
-              minima.</p>
-          </div>
-          <div class="box">
-            <img src="assets/imgs/lightbulb_color.png">
-            <h4>Visão</h4>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et, quas cupiditate asperiores provident magnam
-              vitae illum iusto fugiat atque deleniti nulla sed iure suscipit, laborum, aliquid accusantium cum dicta
-              minima.</p>
-          </div>
-          <div class="box">
-            <img src="assets/imgs/growth_color.png">
-            <h4>Valores</h4>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et, quas cupiditate asperiores provident magnam
-              vitae illum iusto fugiat atque deleniti nulla sed iure suscipit, laborum, aliquid accusantium cum dicta
-              minima.</p>
+    <!--  <section class="marvel">
+      <div class="container_marvel">
+        <div class="sobre_marvel">
+          <h2>Sobre a Marvel</h2>
+          <div class="texto_marvel">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum
+              perferendis unde temporibus sit error in quasi aspernatur veniam
+              neque dolorem impedit quibusdam veritatis at officia doloremque
+              ipsam perspiciatis, corporis eligendi?
+            </p>
           </div>
         </div>
       </div>
-    </div>
-  
-    <div class="footer">
-      <div class="container">
-        <h4>Feito com amor por aluno &hearts; SPTech &copy; 2023</h4>
-        <span class="version">v1.0.0</span>
+    </section> -->
+    <section class="herois">
+      <div id="titulo_herois">
+        <h2>Lendas</h2>
+      </div>
+    
+      <!-- Container para as imagens lado a lado -->
+      <div class="container_herois">
+        <div class="container_wolverine">
+          <div class="titulo_herois_containers">
+            <h2 >Wolverine</h2>
+          </div>
+          <img src="../public/assets/imgs/wolverine.png" alt="">
+        </div>
+        <div class="container_iron-man">
+          <div class="titulo_herois_containers">
+            <h2 >Homem de ferro</h2>
+          </div>
+          <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/e1cd1541-b0ba-444b-9af0-32710c966253/dd9e0ry-1324bb77-678c-48ba-ad74-cb33087d2112.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2UxY2QxNTQxLWIwYmEtNDQ0Yi05YWYwLTMyNzEwYzk2NjI1M1wvZGQ5ZTByeS0xMzI0YmI3Ny02NzhjLTQ4YmEtYWQ3NC1jYjMzMDg3ZDIxMTIucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.0dfEK_L8R-oFq4to4t8wegXYiyvscE9RvGPauy8C7p0" alt="">
+        </div>
+        <div class="container_spyder-man">
+          <div class="titulo_herois_containers">
+            <h2 ><i>Homem Aranha</i></h2>
+          </div>
+          <img src="https://static.wikia.nocookie.net/dublagempedia/images/2/2e/Homem-aranha.png/revision/latest?cb=20180316234648&path-prefix=pt-br" alt="">
+        </div>
+        <div class="container_capitão">
+          <div class="titulo_herois_containers">
+            <h2 >Capitão América</h2>
+          </div>
+          <img src="https://freepngimg.com/download/captain_america/84638-america-figure-comics-character-fictional-iron-action.png" alt="">
+        </div>
+      </div>
+    
+      <!-- Container para os textos um embaixo do outro -->
+     
+    </section>
+    <div class="container_textos">
+      <div class="sobre_wolverine">
+        <h2 class="titulo_lenda">Wolverine</h2>
+        <p>
+          Logan, o Wolverine, é praticamente imortal, com garras de adamantium e um passado sombrio. Mesmo treinado como assassino, ele luta ao lado dos X-Men, enfrentando seus demônios internos em sua busca por justiça!
+        </p>
+      </div>
+    
+      <div class="sobre_iron-man">
+        <h2 class="titulo_lenda">Homem de Ferro</h2>
+        <p>
+          Tony Stark, o Homem de Ferro, é o gênio bilionário por trás da armadura poderosa que usa para salvar o mundo. Após um sequestro traumático, ele transforma seu intelecto em força, tornando-se o líder tecnológico dos Vingadores!
+        </p>
+      </div>
+    
+      <div class="sobre_spyder-man">
+        <h2 class="titulo_lenda">Homem-Aranha</h2>
+        <p>
+          Peter Parker, o Homem-Aranha, luta contra o crime em Nova York! Com habilidades de aranha e sempre com uma piada pronta, ele protege sua cidade, lembrando-se sempre da lição que aprendeu: "Com grandes poderes vêm grandes responsabilidades".
+        </p>
+      </div>
+    
+      <div class="sobre_capitão">
+        <h2 class="titulo_lenda">Capitão América</h2>
+        <p>
+          Steve Rogers, o Capitão América, é o herói da Segunda Guerra Mundial com força sobre-humana e um escudo indestrutível de vibranium! Símbolo de coragem e patriotismo, ele lidera os Vingadores em defesa da justiça.
+        </p>
       </div>
     </div>
+    
+    
+            <section class="minha_história">
+        <div class="container_gustavo">
+          <div class="sobre_gustavo">
+      </div>
+          <h2>Minha história Marvel</h2>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident,
+            totam pariatur, libero soluta dolorem quos distinctio excepturi
+            consequuntur harum magni impedit eaque officiis est? Soluta iure
+            eveniet exercitationem voluptatum ad!
+          </p>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="footer">
+        <div class="img_nav">
+          <img src="" alt="Logo_marvel" />
+        </div>
+        <div class="container_footer">
+          <h3>Gustavo Castro</h3>
+          <div class="footer_social">
+            <ul>
+              <li><a href="">linkedin</a></li>
+              <li><a href="">Instagram</a></li>
+              <li><a href="">github</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
-
 </html>
