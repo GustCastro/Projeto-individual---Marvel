@@ -92,7 +92,7 @@ html {
   font-size: 20px;
   margin-top: 20px;
 }
-#titulo_herois {
+.titulo_herois {
   flex-direction: row;
   text-align: center;
   font-size: 40px;
@@ -202,7 +202,6 @@ html {
   align-items: center;
   width: 100%;
   font-size: 24px;
-  text-align: left;
   margin-bottom: 10px;
   background-color: #f01f1a;
   padding: 5px;
@@ -210,11 +209,11 @@ html {
 }
 
 .container_textos p {
-  padding: 20px;
+  padding: 10px;
   display: flex;
   font-size: 16px;
   text-align: center;
-  margin-top: 5px;
+  margin-bottom: 15px;
 }
 
 .sobre_wolverine,
@@ -229,4 +228,83 @@ html {
   color: black;
   padding: 20px;
   background-color: #ffffff;
+}
+.container_curiosidades {
+  background: url("https://imgs.casasbahia.com.br/1518403216/1xg.jpg") no-repeat
+    center center;
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+  height: auto;
+  justify-content: space-between;
+  display: block;
+  align-items: flex-start;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  gap: 20px;
+}
+.curiosidades_aranha,
+.curiosidades_capitão,
+.curiosidades_iron,
+.curiosidades_wolverine {
+  display: flex;
+  align-items: center;
+  padding: 60px;
+  width: 100%;
+  height: auto;
+  margin-bottom: 120px; /* Espaçamento entre os containers */
+  background-color: #f01f1a;
+  position: relative;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+}
+.texto_curiosidades {
+  margin-left: 20px; /* Margem proporcional à esquerda */
+  border: solid 6px #ffffff;
+  width: 40vw; /* Ajusta a largura para que o conteúdo tenha mais espaço */
+  height: auto; /* Permite que a altura seja flexível com o conteúdo */
+  text-align: left;
+  color: #ffffff; /* Cor do texto em branco */
+  background-color: black; /* Fundo preto */
+  padding: 20px; /* Padding interno para separar o conteúdo das bordas */
+  margin-top: 20px;
+  border-top-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+.texto_curiosidades h2,
+.texto_curiosidades h3 {
+  color: #f01f1a; /* Cor vermelha para h2 e h3 */
+  margin-bottom: 10px; /* Espaçamento inferior entre os títulos */
+}
+.texto_curiosidades h2 {
+  background-color: #f01f1a;
+  color: #ffffff;
+  width: 100%;
+  text-align: center;
+  padding: 5px;
+  font-size: 24px;
+  border: #ffffff 2px solid;
+}
+
+.texto_curiosidades p {
+  margin-bottom: 10px; /* Espaçamento entre os parágrafos */
+  color: white; /* Cor dos parágrafos em branco */
+  font-size: 16px;
+}
+.img_hero {
+  margin-left: 200px;
+  width: 40vw;
+  height: 80vh;
+  background-color: black; /* Fundo branco */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border: 6px solid #ffffff;
+  border-top-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+.img_hero img {
+  width: 100%;
 }
