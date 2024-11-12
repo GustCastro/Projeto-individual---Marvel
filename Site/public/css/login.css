@@ -39,7 +39,7 @@ html {
 
 .container_form {
   display: flex;
-  width: 35%;
+  width: 45%;
   color: #fff;
   background-color: black;
   flex-direction: column;
@@ -50,7 +50,7 @@ html {
 
 h2 {
   margin-bottom: 40px; /* Ajusta o espaçamento abaixo do título */
-  font-size: 30px;
+  font-size: 35px;
 }
 
 .div_email,
@@ -62,7 +62,7 @@ h2 {
 label {
   display: block;
   margin-bottom: 5px;
-  font-size: 14px;
+  font-size: 18px;
   text-align: left;
 }
 
@@ -76,6 +76,7 @@ label {
   color: #fff;
   transition: background-color 0.4s;
   font-family: sans-serif;
+  font-size: 16px;
 }
 
 .div_email input:focus,
@@ -94,7 +95,7 @@ button {
   border-radius: 5px;
   color: #fff;
   background-color: #f01f1a;
-  font-size: 16px;
+  font-size: 20px;
   cursor: pointer;
   transition: background-color 0.4s;
 }
@@ -117,7 +118,7 @@ input:hover::placeholder {
   color: #fff;
 }
 p {
-  font-size: 14px;
+  font-size: 16px;
 }
 a {
   color: #f01f1a;

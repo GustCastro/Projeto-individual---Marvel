@@ -53,7 +53,7 @@ body {
 /* Títulos e Textos */
 h2 {
   margin-bottom: 20px;
-  font-size: 30px;
+  font-size: 35px;
 }
 
 p {
@@ -76,13 +76,13 @@ a:hover {
 .div_confirmar_senha,
 .div_select {
   width: 100%;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 label {
   display: block;
   margin-bottom: 5px;
-  font-size: 14px;
+  font-size: 16px;
   text-align: left;
 }
 
@@ -126,7 +126,7 @@ button {
   margin-bottom: 10px; /* Ajusta o espaçamento inferior do botão */
   color: #fff;
   background-color: #f01f1a;
-  font-size: 16px;
+  font-size: 20px;
   cursor: pointer;
   transition: background-color 0.4s;
 }
@@ -140,4 +140,7 @@ button:hover {
   font-size: 12px; /* Tamanho da fonte */
   margin-top: 5px; /* Espaço acima da mensagem */
   display: none; /* Inicialmente escondido */
+}
+p {
+  font-size: 16px;
 }
