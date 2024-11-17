@@ -6,6 +6,7 @@
   font-family: "Anton", sans-serif;
   font-weight: 100;
   font-style: normal;
+  text-decoration: none;
 }
 html {
   scroll-behavior: smooth;
@@ -27,26 +28,23 @@ html {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 40%;
+  width: 30vw;
   align-items: center;
 }
 .nav_container a {
-  text-decoration: none;
   font-size: 20px;
   color: #ffffff;
-  margin: 14px;
-  padding: 14px;
+
   transition: color 0.5s ease;
 }
 .nav_login_cadastro a {
   color: #f01f1a;
   font-style: italic;
   transition: all 0.5s ease;
+  margin: 14px;
 }
 .nav_login_cadastro a:hover {
   color: #ffffff;
-  border-radius: 15px;
-  box-shadow: #ffffff;
   font-size: 24px;
 }
 .nav_menu a:hover {
@@ -67,7 +65,7 @@ html {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  width: 35vw;
+  width: 40vw;
 }
 .container-banner {
   height: 100vh;
@@ -139,8 +137,8 @@ html {
   width: 100%;
   height: 70vh;
   border: 6px solid #f01f1a;
-  border-top-left-radius: 30px;
   background-color: black;
+  border-top-left-radius: 30px;
   border-bottom-right-radius: 30px;
   margin-bottom: 60px;
   transition: all 0.4s;
@@ -209,8 +207,7 @@ html {
   width: 100%;
   height: 100vh;
   gap: 20px;
-  background: url("https://imgs.casasbahia.com.br/1518403216/1xg.jpg") no-repeat
-    center center;
+  background: url("../assets/imgs/background_index.jpg") no-repeat center center;
   background-attachment: fixed;
   background-size: cover;
   padding: 20px;
@@ -267,7 +264,7 @@ html {
 .sobre_iron-man:hover,
 .sobre_spyder-man:hover,
 .sobre_capitão:hover {
-  height: 60vh; /* Altura normal no hover */
+  height: 60vh;
   background-color: #ffffff;
 }
 
@@ -275,15 +272,14 @@ html {
 .sobre_iron-man:hover p,
 .sobre_spyder-man:hover p,
 .sobre_capitão:hover p {
-  opacity: 1; /* Torna o texto visível */
+  opacity: 1;
 }
 .container_curiosidades {
   background-color: black;
   width: 100%;
-  height: auto;
+  height: fit-content;
   justify-content: space-between;
   display: block;
-  align-items: flex-start;
   padding-top: 15px;
   padding-bottom: 15px;
   gap: 20px;
@@ -296,7 +292,7 @@ html {
   align-items: center;
   padding: 60px;
   width: 100%;
-  height: auto;
+  height: 120vh;
   margin-bottom: 120px; /* Espaçamento entre os containers */
   background-color: #f01f1a;
   position: relative;
@@ -304,15 +300,12 @@ html {
   border-bottom: 6px solid #ffffff;
 }
 .texto_curiosidades {
-  margin-left: 20px; /* Margem proporcional à esquerda */
   border: solid 6px #ffffff;
-  width: 40vw; /* Ajusta a largura para que o conteúdo tenha mais espaço */
-  height: auto; /* Permite que a altura seja flexível com o conteúdo */
-  text-align: left;
+  width: 40vw;
+  height: 100vh;
   color: #ffffff; /* Cor do texto em branco */
   background-color: black; /* Fundo preto */
   padding: 20px; /* Padding interno para separar o conteúdo das bordas */
-  margin-top: 20px;
   border-top-left-radius: 30px;
   border-bottom-right-radius: 30px;
 }
@@ -338,6 +331,7 @@ html {
   align-items: center;
   width: 100%;
   font-size: 35px;
+  margin-top: 10px;
   margin-bottom: 24px;
   background-color: #f01f1a;
   padding: 20px;
@@ -354,8 +348,8 @@ html {
   margin-left: 200px;
   width: 40vw;
   height: 80vh;
-  background: url("https://cdn.iset.io/assets/55268/produtos/13773/papel-de-parede-quadrinhos-marvel-1-07.jpg")
-    no-repeat center center fixed;
+  background: url("../assets/imgs/background1.jpg") no-repeat center center
+    fixed;
   background-size: cover;
   display: flex;
   align-items: center;
@@ -364,7 +358,6 @@ html {
   border: 6px solid #ffffff;
   border-top-left-radius: 30px;
   border-bottom-right-radius: 30px;
-  transition: all 0.5s;
 }
 
 .img_hero img {
@@ -374,9 +367,24 @@ html {
 .footer {
   width: 100%;
   border-top: 2px solid #f01f1a;
+  background-color: black;
+  color: #ffffff;
   height: 20vh;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   flex-direction: row;
+}
+.footer .container_footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.img_footer img {
+  width: 100%;
+  height: 100%;
+}
+.img_footer {
+  width: 10%;
 }

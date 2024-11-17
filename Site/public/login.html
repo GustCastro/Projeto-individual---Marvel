@@ -9,22 +9,25 @@
 
     <script src="./js/sessao.js"></script>
 
-    <link rel="stylesheet" href="./css/login.css" />
+    <link rel="stylesheet" href="css/login.css" />
   </head>
 
   <body>
     <section class="main-container">
       <!-- Imagem à esquerda com link para a homepage -->
       <div class="container_img">
-        <a href="../Homepage/index.html">
-          <img
-            src="../public/assets/imgs/background2.jpg"
-            alt="Background Marvel"
-          />
+        <a href="/public/index.html">
+          <img src="assets/imgs/background2.jpg" alt="Background Marvel" />
         </a>
       </div>
 
-      <form class="container_form">
+      <div class="container_form">
+        <div id="cardErro">
+          <span
+            style="color: #f01f1a; font-size: 18px"
+            id="mensagem_erro"
+          ></span>
+        </div>
         <h2>Acesse sua conta, <span class="title">Lenda!</span></h2>
         <div class="div_email">
           <label for="email">Email</label>
@@ -36,36 +39,40 @@
           />
         </div>
         <div class="div_senha">
-          <label for="senha_input">Senha</label>
-          <input type="password" id="senha" placeholder="Sua senha" required />
+          <label>Senha</label>
+          <input
+            type="password"
+            id="senha_input"
+            placeholder="Sua senha"
+            required
+          />
         </div>
         <br />
-        <button class="button" onclick="entrar">Entrar</button>
+        <button class="button" onclick="entrar()">Entrar</button>
         <br />
         <p>
           Não tem uma conta?
-          <a href="../public/cadastro.html">Cadastre-se!</a>
+          <a href="cadastro.html">Cadastre-se!</a>
         </p>
-      </form>
+      </div>
     </section>
   </body>
 </html>
 
 <script>
   function entrar() {
-    aguardar();
+    /* aguardar(); */
 
     var emailVar = email_input.value;
     var senhaVar = senha_input.value;
 
     if (emailVar == "" || senhaVar == "") {
-      cardErro.style.display = "block";
-      mensagem_erro.innerHTML =
-        "(Mensagem de erro para todos os campos em branco)";
+      cardErro.style.display = "flex";
+      mensagem_erro.innerHTML = "Preencha todos os campos";
       finalizarAguardar();
       return false;
     } else {
-      setInterval(sumirMensagem, 5000);
+      setInterval(sumirMensagem, 1000);
     }
 
     console.log("FORM LOGIN: ", emailVar);
@@ -93,7 +100,7 @@
             sessionStorage.EMAIL_USUARIO = json.email;
             sessionStorage.NOME_USUARIO = json.nome;
             sessionStorage.ID_USUARIO = json.id;
-            sessionStorage.AQUARIOS = JSON.stringify(json.aquarios);
+            /*      sessionStorage.AQUARIOS = JSON.stringify(json.aquarios); */
 
             setTimeout(function () {
               window.location = "./dashboard/cards.html";
