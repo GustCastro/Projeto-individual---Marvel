@@ -103,7 +103,9 @@
             /*      sessionStorage.AQUARIOS = JSON.stringify(json.aquarios); */
 
             setTimeout(function () {
-              window.location = "./dashboard/cards.html";
+              console.log(resposta);
+              window.location = "dashboard/cards.html";
+              alert("usuario logado");
             }, 1000); // apenas para exibir o loading
           });
         } else {
@@ -111,7 +113,6 @@
 
           resposta.text().then((texto) => {
             console.error(texto);
-            finalizarAguardar(texto);
           });
         }
       })
