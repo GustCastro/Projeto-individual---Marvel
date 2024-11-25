@@ -11,6 +11,20 @@
 html {
   scroll-behavior: smooth;
 }
+*::-webkit-scrollbar {
+  width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: black;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #ffffff;
+  border-radius: 15px;
+  border: 2px solid #f01f1a;
+  padding: 5px;
+}
 
 .nav_container {
   display: flex;

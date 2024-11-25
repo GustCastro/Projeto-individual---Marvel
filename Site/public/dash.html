@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="css/dash.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+ 
+  </head>
+  <body>
+    <header>
+      <div class="nav_container">
+        <div class="img_nav">
+          <img src="assets/imgs/logo.png" alt="Logo_marvel" />
+        </div>
+        <div class="logout">
+          <a href="">Sair</a>
+        </div>
+      </div>
+    </header>
+    <div class="main">
+      <div class="side_bar">
+        <div class="nomeBox">
+          <h3>
+            Seja bem-vindo, Lenda!
+            <span id="b_usuario"></span>
+          </h3>
+        </div>
+        <div class="options">
+          <div class="option_home">Home</div>
+          <div class="option_quiz" onclick="acessarQuiz()">Quiz</div>
+          <div class="option_ranking" onclick="aparecerRanking()">Ranking</div>
+        </div>
+      </div>
+      
+      <div class="container_content1">
+        <div class="container_players">
+            <div class="totalPlayers">
+                <div class="title_totalPlayers">
+                    Total de Usuários
+                  </div>
+                  <div class="number_totalPlayers" id="inner_totalJogadores">
+                  </div>
+            </div>
+            <div class="heroi">
+              <div class="title_herois">
+                    Herói mais escolhido
+                  </div>
+                  <div class="heroi_finished" id="inner_herois_mais_escolhido">
+                  </div>
+                </div>
+              </div>
+        <div class="container_gráfico">
+          <div class="grafico">
+              <div class="containerGraphics1">
+                <div>
+                      <canvas id="myChart1">
+                      </canvas>
+                    </div>
+                  </div>
+                </div>
+              </div>
+    </div>
+  </body>
+  </html>
+  
+  <script>
+  const container_dashboard = document.querySelector('.container_content1');
+  function exibirDadosGraficos() {
+      const ctx1 = document.getElementById('myChart1')
+      if (!ctx1) {
+          console.error('Contexto do Canvas não encontrado');
+          return;
+      }
+  
+      var graficoBarras1 = new Chart(ctx1, {
+    type: 'bar',
+    data: {
+        labels: ['Wolverine', 'Homem de Ferro', 'Homem Aranha', 'Capitão America'],
+        datasets: [{
+            label: 'Qntd. de Votos',
+            data: [12, 19, 3, 5],  // Dados fictícios para teste
+            backgroundColor: '#F01F1A',  
+            borderColor: '#ffff',  // Cor da borda das barras
+            borderWidth: 3
+        }]
+    },
+    options: {
+        responsive: true,  // Habilita o comportamento responsivo
+        maintainAspectRatio: false,  // Permite ajuste livre da altura e largura
+        plugins: {
+            legend: {
+                labels: {
+                    color: '#ffffff'  // Cor das fontes da legenda
+                }
+            }
+        },
+        scales: {
+            y: {
+                beginAtZero: true,
+                ticks: {
+                    color: '#ffffff',  // Cor das fontes do eixo Y
+                },
+                grid: {
+                    display: false  // Desativa a grade do eixo Y
+                }
+            },
+            x: {
+                ticks: {
+                    color: '#ffffff',  // Cor das fontes do eixo X
+                },
+                grid: {
+                    display: false  // Desativa a grade do eixo X
+                }
+            }
+        }
+    }
+});
+
+
+  }
+
+  exibirDadosGraficos();
+</script>
