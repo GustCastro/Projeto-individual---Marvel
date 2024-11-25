@@ -6,7 +6,7 @@
     <title>Dashboard</title>
     <link rel="stylesheet" href="css/dash.css" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
- 
+    
   </head>
   <body>
     <header>
@@ -23,8 +23,10 @@
       <div class="side_bar">
         <div class="nomeBox">
           <h3>
-            Seja bem-vindo, Lenda!
-            <span id="b_usuario"></span>
+            Seja bem-vindo, 
+            <span style="color: #fff;" id="b_usuario"></span>
+             Você é uma lenda
+
           </h3>
         </div>
         <div class="options">
@@ -36,23 +38,23 @@
       
       <div class="container_content1">
         <div class="container_players">
-            <div class="totalPlayers">
-                <div class="title_totalPlayers">
-                    Total de Usuários
-                  </div>
-                  <div class="number_totalPlayers" id="inner_totalJogadores">
-                  </div>
+          <div class="totalPlayers">
+            <div class="title_totalPlayers">
+              Total de Usuários
             </div>
-            <div class="heroi">
-              <div class="title_herois">
-                    Herói mais escolhido
-                  </div>
-                  <div class="heroi_finished" id="inner_herois_mais_escolhido">
+            <div class="number_totalPlayers" id="inner_totalJogadores">
                   </div>
                 </div>
+            <div class="heroi">
+              <div class="title_herois">
+                Herói mais escolhido
               </div>
-        <div class="container_gráfico">
-          <div class="grafico">
+              <div class="heroi_finished" id="inner_herois_mais_escolhido">
+              </div>
+            </div>
+          </div>
+          <div class="container_gráfico">
+            <div class="grafico">
               <div class="containerGraphics1">
                 <div>
                       <canvas id="myChart1">
@@ -61,12 +63,63 @@
                   </div>
                 </div>
               </div>
-    </div>
-  </body>
-  </html>
-  
-  <script>
-  const container_dashboard = document.querySelector('.container_content1');
+            </div>
+          </body>
+          </html>
+          
+          <script>
+            const container_dashboard = document.querySelector('.container_content1');
+              b_usuario.innerHTML = `${sessionStorage.NOME_USUARIO}!`
+            
+function totalJogadores() {
+    fetch("/usuarios/coletarTotalUsuarios")
+        .then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!");
+
+            if (resposta.ok) {
+                return resposta.json();
+            } else {
+                return console.log("Dados não coletados!");
+            }
+        })
+        .then(function (json) {
+            console.log("Dados recebidos:", json);
+            sessionStorage.TOTAL_JOGADORES = json.totalJogadores;
+        
+        })
+        .catch(function (erro) {
+            console.error("Erro:", erro);
+        });
+}
+
+
+
+function heroisMaisEscolhido() {
+    fetch("/grafico/heroisMaisEscolhido")
+        .then(function (resposta) {
+            if (resposta.ok) {
+                return resposta.json();
+            } else {
+                return console.log("Dados não coletados!");
+            }
+        })
+        .then(function (json) {
+            if (json.length > 0) {
+                let herois = json.map(item => item.heroiFav).join(', ');
+                document.getElementById("inner_herois_mais_escolhido").innerText = `${herois}`;
+            } else {
+                document.getElementById("inner_herois_mais_escolhido").innerText = "Nenhum herói";
+            }
+        })
+        .catch(function (erro) {
+            console.error("Erro:", erro);
+        });
+}
+
+
+
+
+
   function exibirDadosGraficos() {
       const ctx1 = document.getElementById('myChart1')
       if (!ctx1) {
@@ -80,7 +133,7 @@
         labels: ['Wolverine', 'Homem de Ferro', 'Homem Aranha', 'Capitão America'],
         datasets: [{
             label: 'Qntd. de Votos',
-            data: [12, 19, 3, 5],  // Dados fictícios para teste
+            data: [],
             backgroundColor: '#F01F1A',  
             borderColor: '#ffff',  // Cor da borda das barras
             borderWidth: 3
@@ -118,6 +171,21 @@
     }
 });
 
+fetch('/grafico/dadosGraficos')
+        .then(resposta => resposta.json())
+        .then(data => {
+            graficoBarras1.data.datasets[0].data = [
+                data.Wolverine,
+                data.HomemDeFerro,
+                data.HomemAranha,
+                data.CapitaoAmerica
+               
+            ];
+            graficoBarras1.update();
+        })
+        .catch(error => {
+            console.error('Erro ao buscar dados do gráfico:', error);
+        });
 
   }
 

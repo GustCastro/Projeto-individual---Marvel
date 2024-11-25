@@ -1,5 +1,23 @@
 var usuarioModel = require("../models/usuarioModel");
-var aquarioModel = require("../models/aquarioModel");
+
+
+function coletarTotalUsuarios(req, res) {
+    usuarioModel.coletarTotalUsuarios()
+    .then(function (resultadoTotalUsuarios) {
+        if (resultadoTotalUsuarios.length > 0) {
+            console.log("Dados coletados:", resultadoTotalUsuarios);
+            res.status(200).json({
+                totalJogadores: resultadoTotalUsuarios[0].totalJogadores,
+            });
+        } else {
+            res.status(204).send("Nenhum resultado encontrado!");
+        }
+    })
+    .catch(function (erro) {
+        console.error("Erro ao coletar dados:", erro);
+        res.status(500).send("Erro no servidor");
+    });
+}
 
 function autenticar(req, res)  {
     var email = req.body.emailServer;
@@ -26,14 +44,7 @@ function autenticar(req, res)  {
                             nome: resultadoAutenticar[0].nome,
                             senha: resultadoAutenticar[0].senha
                         })
-                        // aquarioModel.buscarAquariosPorEmpresa(resultadoAutenticar[0].empresaId)
-                        //     .then((resultadoAquarios) => {
-                        //         if (resultadoAquarios.length > 0) {
-                        //             });
-                        //         } else {
-                        //             res.status(204).json({ aquarios: [] });
-                        //         }
-                        //     })
+             
                     } else if (resultadoAutenticar.length == 0) {
                         res.status(403).send("Email e/ou senha inválido(s)");
                     } else {
@@ -87,5 +98,6 @@ function cadastrar(req, res) {
 
 module.exports = {
     autenticar,
-    cadastrar
+    cadastrar,
+    coletarTotalUsuarios
 }
