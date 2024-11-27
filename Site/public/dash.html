@@ -32,7 +32,7 @@
         <div class="options">
           <div class="option_home">Home</div>
           <div class="option_quiz" onclick="acessarQuiz()">Quiz</div>
-          <div class="option_ranking" onclick="aparecerRanking()">Ranking</div>
+          <div class="option_ranking" onclick="aparecerRanking()"></div>
         </div>
       </div>
       
@@ -42,7 +42,7 @@
             <div class="title_totalPlayers">
               Total de Usuários
             </div>
-            <div class="number_totalPlayers" id="inner_totalJogadores">
+            <div class="number_totalPlayers" id="inner_totalUsuarios">
                   </div>
                 </div>
             <div class="heroi">
@@ -71,7 +71,7 @@
             const container_dashboard = document.querySelector('.container_content1');
               b_usuario.innerHTML = `${sessionStorage.NOME_USUARIO}!`
             
-function totalJogadores() {
+function totalUsuarios() {
     fetch("/usuarios/coletarTotalUsuarios")
         .then(function (resposta) {
             console.log("ESTOU NO THEN DO entrar()!");
@@ -84,7 +84,9 @@ function totalJogadores() {
         })
         .then(function (json) {
             console.log("Dados recebidos:", json);
-            sessionStorage.TOTAL_JOGADORES = json.totalJogadores;
+            sessionStorage.TOTAL_USUARIOS = json.totalUsuarios;
+            exibirTotalUsers()
+            
         
         })
         .catch(function (erro) {
@@ -117,7 +119,13 @@ function heroisMaisEscolhido() {
 }
 
 
+function exibirTotalUsers(){
+  let totalUsuarios = sessionStorage.TOTAL_USUARIOS;
 
+let exibirTotalUsuarios = document.getElementById("inner_totalUsuarios");
+
+exibirTotalUsuarios.innerHTML = `${totalUsuarios}`;
+}
 
 
   function exibirDadosGraficos() {
@@ -132,7 +140,7 @@ function heroisMaisEscolhido() {
     data: {
         labels: ['Wolverine', 'Homem de Ferro', 'Homem Aranha', 'Capitão America'],
         datasets: [{
-            label: 'Qntd. de Votos',
+            label: 'Heróis favoritos',
             data: [],
             backgroundColor: '#F01F1A',  
             borderColor: '#ffff',  // Cor da borda das barras
@@ -140,8 +148,8 @@ function heroisMaisEscolhido() {
         }]
     },
     options: {
-        responsive: true,  // Habilita o comportamento responsivo
-        maintainAspectRatio: false,  // Permite ajuste livre da altura e largura
+         responsive: true,  // Habilita o comportamento responsivo 
+         maintainAspectRatio: false,   //Permite ajuste livre da altura e largura 
         plugins: {
             legend: {
                 labels: {
@@ -188,6 +196,11 @@ fetch('/grafico/dadosGraficos')
         });
 
   }
-
+  heroisMaisEscolhido()
   exibirDadosGraficos();
+  totalUsuarios()
+
+  function acessarQuiz() {
+    window.location.href = `quiz.html`
+  }
 </script>

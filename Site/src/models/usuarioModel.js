@@ -2,7 +2,7 @@ var database = require("../database/config")
 
 function coletarTotalUsuarios() {
     var instrucaoSql = `
-    select (select count(id) from usuario) as totalJogadores;
+    select (select count(id) from usuario) as totalUsuarios;
         
     `;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);

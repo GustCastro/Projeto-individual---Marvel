@@ -24,7 +24,7 @@ function heroisMaisEscolhido(req, res) {
     graficoModel.heroisMaisEscolhido()
     .then(function (resultado) {
         if (resultado.length > 0) {
-            console.log("Heoris mais escolhido:", resultado);
+            console.log("Herois mais escolhido:", resultado);
             res.status(200).json(resultado);
         } else {
             res.status(204).send("Nenhum resultado encontrado!");

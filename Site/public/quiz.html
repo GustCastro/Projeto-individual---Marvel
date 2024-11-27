@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="../public/css/quiz.css" />
+    <link rel="stylesheet" href="css/quiz.css" />
 
     <title>Quiz JavaScript</title>
   </head>
@@ -52,7 +52,7 @@
   const $answers = document.querySelectorAll(".answer");
 
   let currentQuestionIndex = 0;
-  let totalCorrect = 0;
+  let pontos = 0;
 
   $startGameButton.addEventListener("click", startGame);
   $nextQuestionButton.addEventListener("click", displayNextQuestion);
@@ -97,7 +97,7 @@
     const answerClicked = event.target;
 
     if (answerClicked.dataset.correct) {
-      totalCorrect++;
+      pontos++;
     }
     document.querySelectorAll(".answer").forEach((button) => {
       button.disabled = true;
@@ -115,16 +115,16 @@
 
   function finishGame() {
     const totalQuestions = questions.length;
-    const performance = Math.floor((totalCorrect * 100) / totalQuestions);
+    const performance = Math.floor((pontos * 100) / totalQuestions);
 
     let message = "";
 
     switch (true) {
       case performance >= 90:
-        message = "Excelente :)";
+        message = "Excelsior! :)";
         break;
       case performance >= 70:
-        message = "Muito bom :)";
+        message = "Muito bom!";
         break;
       case performance >= 50:
         message = "Bom";
@@ -135,7 +135,7 @@
 
     $questionsContainer.innerHTML = `
     <p class="final-message">
-      Você acertou ${totalCorrect} de ${totalQuestions} questões!
+      Você acertou ${pontos} de ${totalQuestions} questões! perforamce de ${performance}%
       <span>Resultado: ${message}</span>
     </p>
     <button 
@@ -145,6 +145,36 @@
       Refazer teste
     </button>
   `;
+    cadastrarPontos(pontos);
+  }
+  function cadastrarPontos(pontos) {
+    const idUsuario = sessionStorage.getItem("ID_USUARIO"); // Usando o getItem corretamente
+    sessionStorage.setItem("Pontos", pontos); // Armazenando pontos no sessionStorage
+
+    if (!idUsuario) {
+      console.error("ID do usuário não encontrado.");
+      return;
+    }
+
+    fetch("/quiz/cadastrarPontos", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ pontos: pontos, idUsuario: idUsuario }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Resposta do servidor:", data);
+        if (data.error) {
+          console.error("Erro ao cadastrar pontos:", data.error);
+        } else {
+          console.log("Pontos cadastrados com sucesso:", data);
+        }
+      })
+      .catch((error) => {
+        console.error("Erro ao cadastrar pontos:", error);
+      });
   }
 
   const questions = [
@@ -224,7 +254,6 @@
       ],
     },
 
-    // Perguntas mais difíceis
     {
       question:
         "Qual foi o nome da primeira armadura criada por Tony Stark no filme 'Homem de Ferro'?",
