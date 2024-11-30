@@ -19,12 +19,22 @@ foreign key (fkUsuario) references usuario (id)
 );
 select * from quiz;
 
+select usuario.id as jogador_id, usuario.nome as nome_jogador, quiz.pontos FROM usuario 
+join quiz on quiz.fkUsuario = usuario.id ORDER BY quiz.pontos DESC;
 
 
-
-
-
-
+SELECT 
+    usuario.id AS jogador_id,
+    usuario.nome AS nome_jogador,
+    SUM(quiz.pontos) AS pontos_totais
+FROM 
+    usuario
+JOIN 
+    quiz ON quiz.fkUsuario = usuario.id
+GROUP BY 
+    usuario.id
+ORDER BY 
+    pontos_totais DESC;
 
 
 

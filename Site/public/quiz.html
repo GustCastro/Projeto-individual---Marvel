@@ -17,10 +17,10 @@
           <img src="assets/imgs/logo.png" alt="Logo_marvel" />
         </div>
         <div class="nav_menu">
-          <a href="">DashBoard</a>
+          <a href="dash.html">DashBoard</a>
         </div>
         <div class="logout">
-          <a href="">Sair</a>
+          <a href="login.html">Sair</a>
         </div>
       </div>
     </header>
@@ -135,7 +135,7 @@
 
     $questionsContainer.innerHTML = `
     <p class="final-message">
-      Você acertou ${pontos} de ${totalQuestions} questões! perforamce de ${performance}%
+      Você acertou ${pontos} de ${totalQuestions} questões! performance de ${performance}%
       <span>Resultado: ${message}</span>
     </p>
     <button 
@@ -181,97 +181,105 @@
     // Wolverine
     {
       question:
-        "Wolverine tem garras feitas de adamantium, um metal quase indestrutível.",
+        "Qual era o nome do programa que implantou adamantium no esqueleto do Wolverine?",
       answers: [
-        { text: "Verdadeiro", correct: true },
-        { text: "Falso", correct: false },
+        { text: "Programa Arma X", correct: true },
+        { text: "Experimento Mutante", correct: false },
+        { text: "Iniciativa Mutante", correct: false },
+        { text: "Projeto Sentinela", correct: false },
       ],
     },
     {
-      question: "Qual é a habilidade regenerativa de Wolverine?",
+      question: "Qual é o verdadeiro nome de nascimento do Wolverine?",
       answers: [
-        { text: "Ele pode se curar de ferimentos rapidamente", correct: true },
-        { text: "Ele tem super força", correct: false },
-        { text: "Ele pode voar", correct: false },
-        { text: "Ele é invisível", correct: false },
+        { text: "Logan", correct: false },
+        { text: "James Howlett", correct: true },
+        { text: "Victor Creed", correct: false },
+        { text: "John Logan", correct: false },
       ],
     },
 
     // Capitão América
     {
       question:
-        "O Capitão América foi congelado em um iceberg durante a Segunda Guerra Mundial e descongelado décadas depois.",
+        "Steve Rogers foi o único a portar o escudo do Capitão América nos quadrinhos.",
       answers: [
-        { text: "Verdadeiro", correct: true },
-        { text: "Falso", correct: false },
+        { text: "Verdadeiro", correct: false },
+        { text: "Falso", correct: true },
       ],
     },
     {
-      question: "Qual é o material do escudo do Capitão América?",
+      question:
+        "Capitão América já liderou os Guardiões da Galáxia nos quadrinhos.",
       answers: [
-        { text: "Madeira", correct: false },
-        { text: "Vibranium", correct: true },
-        { text: "Aço", correct: false },
-        { text: "Titanium", correct: false },
+        { text: "Verdadeiro", correct: false },
+        { text: "Falso", correct: true },
       ],
     },
 
     // Homem de Ferro
     {
       question:
-        "Homem de Ferro utiliza um reator arc em seu peito para sobreviver e alimentar suas armaduras.",
+        "Qual o nome da primeira inteligência artificial criada por Tony Stark para ajudar a gerenciar sua armadura?",
       answers: [
-        { text: "Verdadeiro", correct: true },
-        { text: "Falso", correct: false },
+        { text: "J.A.R.V.I.S.", correct: true },
+        { text: "U.L.T.R.O.N.", correct: false },
+        { text: "F.R.I.D.A.Y.", correct: false },
+        { text: "A.R.K.", correct: false },
       ],
     },
     {
-      question: "Quem é o verdadeiro nome do Homem de Ferro?",
+      question:
+        "Quem foi responsável por sequestrar Tony Stark no Afeganistão, forçando-o a criar sua primeira armadura?",
       answers: [
-        { text: "Bruce Wayne", correct: false },
-        { text: "Tony Stark", correct: true },
-        { text: "Steve Rogers", correct: false },
-        { text: "Peter Parker", correct: false },
+        { text: "Mandarim", correct: false },
+        { text: "Os Dez Anéis", correct: true },
+        { text: "OQ-7", correct: false },
+        { text: "U.L.T.R.O.N.", correct: false },
       ],
     },
 
     // Homem-Aranha
     {
       question:
-        "O Homem-Aranha foi picado por uma aranha radioativa, que lhe deu seus poderes.",
+        "Qual vilão foi responsável pela morte de Gwen Stacy nos quadrinhos?",
       answers: [
-        { text: "Verdadeiro", correct: true },
-        { text: "Falso", correct: false },
+        { text: "Duende Verde", correct: true },
+        { text: "Doutor Octopus", correct: false },
+        { text: "Venom", correct: false },
+        { text: "Homem-Areia", correct: false },
       ],
     },
     {
-      question: "Qual é a habilidade mais característica do Homem-Aranha?",
+      question:
+        "Qual foi a revista em que o Homem-Aranha fez sua primeira aparição nos quadrinhos?",
       answers: [
-        { text: "Super força", correct: false },
-        { text: "Escalar paredes", correct: true },
-        { text: "Telepatia", correct: false },
-        { text: "Invisibilidade", correct: false },
+        { text: "Amazing Spider-Man #1", correct: false },
+        { text: "Amazing Fantasy #15", correct: true },
+        { text: "Avengers Annual #15", correct: false },
+        { text: "Ultimate Spider-Man #1", correct: false },
       ],
     },
 
     {
       question:
-        "Qual foi o nome da primeira armadura criada por Tony Stark no filme 'Homem de Ferro'?",
+        "Na saga 'Guerra Civil', qual herói revelou publicamente sua identidade secreta em apoio à Lei de Registro de Super-Humanos?",
       answers: [
-        { text: "Mark I", correct: true },
-        { text: "Mark II", correct: false },
-        { text: "Mark III", correct: false },
-        { text: "Mark IV", correct: false },
+        { text: "Homem-Aranha", correct: true },
+        { text: "Capitão América", correct: false },
+        { text: "Pantera Negra", correct: false },
+        { text: "Deadpool", correct: false },
       ],
     },
+
     {
       question:
-        "Wolverine fez parte de qual equipe de heróis, junto com o Capitão América e Homem de Ferro?",
+        "Wolverine conseguiu derrotar o Hulk em quantas ocasiões nos quadrinhos principais?",
       answers: [
-        { text: "X-Men", correct: true },
-        { text: "Vingadores", correct: false },
-        { text: "Quarteto Fantástico", correct: false },
-        { text: "Liga da Justiça", correct: false },
+        { text: "Duas vezes", correct: true },
+        { text: "Apenas uma vez", correct: false },
+        { text: "Nunca o derrotou", correct: false },
+        { text: "Três vezes", correct: false },
       ],
     },
   ];

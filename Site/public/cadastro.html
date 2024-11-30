@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Legends Marvel | Cadastro</title>
-
-    <script src="./js/sessao.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <link rel="stylesheet" href="css/cadastro.css" />
     <link rel="icon" href="./assets/icon/favicon2.ico" />
@@ -23,7 +22,7 @@
             id="mensagem_erro"
           ></span>
         </div>
-        <h2>Cadastre-se</h2>
+        <h2>Cadastre-se, <span style="color: #f01f1a">Herói!</span></h2>
 
         <div class="div_nome">
           <label>Nome completo</label>
@@ -111,7 +110,7 @@
     var selectVar = heroi_select.value;
 
     const numeros = /[0-9]/;
-    /* var idEmpresaVincular; */
+
     // Verificando se há algum campo em branco
     if (
       nomeVar == "" ||
@@ -120,54 +119,130 @@
       confirmacaoSenhaVar == "" ||
       selectVar == ""
     ) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Preencha todos os campos",
+        color: "#f01f1a",
+        customClass: {
+          confirmButton: "custom-button", // Classe personalizada para o botão
+        },
+      });
       cardErro.style.display = "flex";
       mensagem_erro.innerHTML = "Preencha todos os campos";
 
-      finalizarAguardar();
       return false;
     } else if (nomeVar.length < 3 || nomeVar.length > 50) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "O nome deve ter entre 3 e 50 caracteres",
+        color: "#f01f1a",
+        customClass: {
+          confirmButton: "custom-button", // Classe personalizada para o botão
+        },
+      });
       cardErro.style.display = "flex";
       mensagem_erro.innerHTML = "O nome deve ter entre 3 e 50 caracteres";
 
-      finalizarAguardar();
       return false;
     } else if (numeros.test(nomeVar) == true) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "O nome não pode conter numeros",
+        color: "#f01f1a",
+        customClass: {
+          confirmButton: "custom-button", // Classe personalizada para o botão
+        },
+      });
       cardErro.style.display = "flex";
       mensagem_erro.innerHTML = "O nome não pode conter numeros";
 
-      finalizarAguardar();
       return false;
     } else if (emailVar.indexOf("@") == -1) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "O email deve conter @",
+        color: "#f01f1a",
+        customClass: {
+          confirmButton: "custom-button", // Classe personalizada para o botão
+        },
+      });
       cardErro.style.display = "flex";
       mensagem_erro.innerHTML = "O email deve conter @";
 
-      finalizarAguardar();
       return false;
     } else if (emailVar.indexOf(".com") == -1) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "O email deve conter .com",
+        color: "#f01f1a",
+        customClass: {
+          confirmButton: "custom-button", // Classe personalizada para o botão
+        },
+      });
       cardErro.style.display = "flex";
       mensagem_erro.innerHTML = "O email deve conter .com";
 
-      finalizarAguardar();
       return false;
     } else if (senhaVar.length < 8) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "A senha deve conter pelo menos 8 caracteres",
+        color: "#f01f1a",
+        customClass: {
+          confirmButton: "custom-button",
+        },
+      });
       cardErro.style.display = "flex";
       mensagem_erro.innerHTML = "A senha deve conter pelo menos 8 caracteres";
-      finalizarAguardar();
+
       return false;
     } else if (senhaVar.indexOf("@") == -1 && senhaVar.indexOf("$") == -1) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "A senha deve conter pelo menos @ ou $",
+        color: "#f01f1a",
+        customClass: {
+          confirmButton: "custom-button", // Classe personalizada para o botão
+        },
+      });
       cardErro.style.display = "flex";
       mensagem_erro.innerHTML = "A senha deve conter pelo menos @ ou $";
-      finalizarAguardar();
+
       return false;
     } else if (!numeros.test(senhaVar)) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "A senha deve conter numeros",
+        color: "#f01f1a",
+        customClass: {
+          confirmButton: "custom-button", // Classe personalizada para o botão
+        },
+      });
       cardErro.style.display = "flex";
       mensagem_erro.innerHTML = "A senha deve conter numeros";
-      finalizarAguardar();
+
       return false;
     } else if (senhaVar != confirmacaoSenhaVar) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "As senhas devem ser iguais",
+        color: "#f01f1a",
+        customClass: {
+          confirmButton: "custom-button", // Classe personalizada para o botão
+        },
+      });
       cardErro.style.display = "flex";
       mensagem_erro.innerHTML = "As senhas devem ser iguais";
-      finalizarAguardar();
+
       return false;
     } else {
       setInterval(sumirMensagem, 2000);
@@ -192,6 +267,13 @@
         console.log("resposta: ", resposta);
 
         if (resposta.ok) {
+          Swal.fire({
+            title: "Sucesso!",
+            text: "Usuário cadastrado!",
+            icon: "success",
+            showConfirmButton: false,
+            color: "#f01f1a",
+          });
           cardErro.style.display = "block";
 
           mensagem_erro.innerHTML =
@@ -200,16 +282,12 @@
           setTimeout(() => {
             window.location = "login.html";
           }, "2000");
-
-          limparFormulario();
-          finalizarAguardar();
         } else {
           throw "Houve um erro ao tentar realizar o cadastro!";
         }
       })
       .catch(function (resposta) {
         console.log(`#ERRO: ${resposta}`);
-        finalizarAguardar();
       });
 
     return false;

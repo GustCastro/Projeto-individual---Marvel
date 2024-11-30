@@ -11,5 +11,8 @@ router.get("/dadosGraficos", function (req, res) {
 router.get("/heroisMaisEscolhido", function (req,res) { 
     graficoController.heroisMaisEscolhido(req,res);
 });
+router.get("/jogadoresPontos", function (req,res) { 
+    graficoController.jogadoresPontos(req,res);
+});
 
 module.exports = router;

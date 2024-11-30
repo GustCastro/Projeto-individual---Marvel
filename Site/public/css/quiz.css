@@ -14,7 +14,7 @@ body {
 .nav_container {
   display: flex;
   width: 100%;
-  background-color: black;
+  background-color: #111;
   height: 15vh;
   position: sticky;
   top: 0;
@@ -129,13 +129,14 @@ button {
   padding: 0 30px;
   border-top-left-radius: 15px;
   border-bottom-right-radius: 15px;
-  transition: background 0.5s;
+  transition: all ease 0.3s;
 }
 
 .button:not(:disabled):hover {
   background-color: #ffffff;
   color: #f01f1a;
-  border: transparent;
+  border: 2px solid transparent;
+  transform: translateY(-3px);
 }
 
 .final-message {

@@ -12,13 +12,10 @@
 .nav_container {
   display: flex;
   width: 100%;
-  background-color: black;
+  background-color: #111;
   height: 15vh;
-  position: sticky;
-  top: 0;
   align-items: center;
   flex-direction: row;
-  z-index: 1000;
   border-bottom: 3px solid #f01f1a;
 }
 .img_nav {
@@ -42,11 +39,11 @@
   font-style: italic;
   transition: all 0.5s ease;
   margin: 14px;
-  font-size: 20px;
+  font-size: 22px;
 }
 .logout a:hover {
   color: #ffffff;
-  font-size: 24px;
+  font-size: 26px;
 }
 
 button {
@@ -59,9 +56,9 @@ button {
 }
 
 .side_bar {
-  width: 25%;
+  width: 20vw;
   height: 100vh;
-  background-color: black;
+  background-color: #111;
   color: #ffffff;
   border-right: 3px solid #f01f1a;
   padding: 20px;
@@ -75,25 +72,26 @@ button {
 .nomeBox {
   text-align: center;
   font-size: 22px;
-  margin-bottom: 60px;
+  margin-bottom: 50px;
   color: #f01f1a;
+  padding: 20px;
 }
 
 .options {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 10px;
 }
 
 .options div {
   color: white;
   background-color: #f01f1a;
-  padding: 20px;
+  padding: 15px;
   border-top-left-radius: 15px;
   border-bottom-right-radius: 15px;
   text-align: center;
-  font-size: 18px;
+  font-size: 20px;
   cursor: pointer;
   border: 2px solid #ffffff;
   transition: all 0.4s ease;
@@ -114,6 +112,7 @@ button {
   background-attachment: fixed;
   background-size: cover;
   color: white;
+  height: 100%;
   min-height: 85vh;
   display: flex;
   flex-direction: column;
@@ -121,65 +120,64 @@ button {
 }
 
 /* Ajuste dos gráficos */
-.container_gráfico {
+.container_graficos {
   display: flex;
-  justify-content: center;
-  padding: 20px;
+  flex-wrap: wrap; /* Permite que os gráficos se reorganizem em telas pequenas */
+  justify-content: space-evenly; /* Espaçamento uniforme entre gráficos */
+  gap: 20px; /* Espaçamento entre os gráficos */
+  background-color: #111111c9;
   border-radius: 15px;
-  background-color: black;
+  padding: 25px;
 }
-
+.grafico {
+  flex: 1; /* Cada gráfico ocupa a mesma largura */
+  background-color: #f01f1a; /* Fundo para destacar */
+  border-radius: 10px;
+  padding: 5px;
+  min-width: 350px; /* Define largura mínima */
+}
 .grafico canvas {
   width: 100%;
-  height: 60vh;
+  height: 50vh;
   border-radius: 10px;
-  background-color: #121212;
+  background-color: black;
 } /* Container das KPIs */
 .container_players {
   display: flex;
-  justify-content: space-between; /* Distribui as KPIs igualmente */
-  gap: 20px; /* Espaçamento entre as KPIs */
-  margin-bottom: 30px;
+  flex-wrap: wrap; /* Permite adaptação ao espaço disponível */
+  gap: 20px;
+  justify-content: space-between; /* Espaçamento igual entre itens */
+  margin-bottom: 50px;
 }
 
 /* Estilo das KPIs */
 .totalPlayers,
-.heroi {
+.heroi,
+.kpi1,
+.kpi2 {
   background-color: #f01f1a;
   text-align: center;
-  padding: 20px;
-  border-radius: 15px;
+  padding: 15px;
   border: 2px solid #ffffff;
-  width: 48%;
+  border-top-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  flex: 1 1 calc(25% - 20px);
 }
 
 /* Título das KPIs */
 .title_totalPlayers,
-.title_herois {
-  font-size: 22px;
+.title_herois,
+.title_kpi {
+  font-size: 20px;
   color: #ffffff;
   margin-bottom: 10px;
 }
 
 /* Números das KPIs */
 .number_totalPlayers,
-.heroi_finished {
-  font-size: 30px;
+.heroi_finished,
+.value_kpi {
+  font-size: 20px;
   color: #ffffff;
   text-align: center;
-}
-
-.container_gráfico {
-  display: flex;
-  justify-content: center;
-  padding: 20px;
-  border-radius: 15px;
-  background-color: rgba(0, 0, 0, 0.696);
-}
-
-.grafico canvas {
-  width: 100%;
-  height: 60vh;
-  border-radius: 10px;
-  background-color: black;
 }

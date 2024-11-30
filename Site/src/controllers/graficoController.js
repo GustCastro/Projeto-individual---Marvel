@@ -1,5 +1,18 @@
 var graficoModel = require("../models/graficoModel.js");
 
+function jogadoresPontos(req, res) {
+    graficoModel.jogadoresPontos()
+    .then(resultados => {
+        res.json(resultados);
+    })
+    .catch(erro => {
+        console.error('Erro ao buscar pontuações dos jogadores: ', erro);
+        res.status(500).json({ erro: 'Erro ao buscar as pontuações dos jogadores.' });
+    });
+    
+    
+}
+
 function dadosGraficos(req, res) {
     graficoModel.dadosGraficos()
     .then(function (resultadodadosGraficos) {
@@ -37,5 +50,6 @@ function heroisMaisEscolhido(req, res) {
 }
 module.exports = {
     dadosGraficos,
-    heroisMaisEscolhido
+    heroisMaisEscolhido,
+    jogadoresPontos
 };

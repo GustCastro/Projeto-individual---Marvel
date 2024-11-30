@@ -15,7 +15,7 @@
           <img src="assets/imgs/logo.png" alt="Logo_marvel" />
         </div>
         <div class="logout">
-          <a href="">Sair</a>
+          <a href="login.html">Sair</a>
         </div>
       </div>
     </header>
@@ -30,40 +30,50 @@
           </h3>
         </div>
         <div class="options">
-          <div class="option_home">Home</div>
+          <div class="option_home" onclick="acessarHome()">Home</div>
+          <div class="option_ranking" onclick="location.reload()">Dashboard</div>
           <div class="option_quiz" onclick="acessarQuiz()">Quiz</div>
-          <div class="option_ranking" onclick="aparecerRanking()"></div>
+        
         </div>
       </div>
       
       <div class="container_content1">
         <div class="container_players">
           <div class="totalPlayers">
-            <div class="title_totalPlayers">
-              Total de Usuários
-            </div>
-            <div class="number_totalPlayers" id="inner_totalUsuarios">
-                  </div>
-                </div>
-            <div class="heroi">
-              <div class="title_herois">
-                Herói mais escolhido
-              </div>
-              <div class="heroi_finished" id="inner_herois_mais_escolhido">
-              </div>
+            <div class="title_totalPlayers">Total de Usuários</div>
+            <div class="number_totalPlayers" id="inner_totalUsuarios"></div>
+          </div>
+          <div class="heroi">
+            <div class="title_herois">Herói mais escolhido</div>
+            <div class="heroi_finished" id="inner_herois_mais_escolhido"></div>
+          </div>
+          <!-- Nova KPI 1 -->
+          <div class="kpi1">
+            <div class="title_kpi">Média de pontos</div>
+            <div class="value_kpi" id="inner_média"></div>
+          </div>
+          <!-- Nova KPI 2 -->
+          <div class="kpi2">
+            <div class="title_kpi">Maior pontuador</div>
+            <div class="value_kpi" id="inner_maior_pontuador"></div>
+          </div>
+        </div>
+      
+        <div class="container_graficos">
+          <div class="grafico">
+            <div class="containerGraphics1">
+              <canvas id="myChart1"></canvas>
             </div>
           </div>
-          <div class="container_gráfico">
-            <div class="grafico">
-              <div class="containerGraphics1">
-                <div>
-                      <canvas id="myChart1">
-                      </canvas>
-                    </div>
-                  </div>
-                </div>
-              </div>
+          <!-- Novo gráfico -->
+          <div class="grafico">
+            <div class="containerGraphics2">
+              <canvas id="myChart2"></canvas>
             </div>
+          </div>
+        </div>
+      </div>
+      
           </body>
           </html>
           
@@ -129,6 +139,7 @@ exibirTotalUsuarios.innerHTML = `${totalUsuarios}`;
 
 
   function exibirDadosGraficos() {
+    const ctx2 = document.getElementById("myChart2");
       const ctx1 = document.getElementById('myChart1')
       if (!ctx1) {
           console.error('Contexto do Canvas não encontrado');
@@ -178,6 +189,56 @@ exibirTotalUsuarios.innerHTML = `${totalUsuarios}`;
         }
     }
 });
+ // Segundo gráfico: Jogadores e pontos
+ const graficoBarras2 = new Chart(ctx2, {
+        type: "bar",
+        data: {
+            labels: [],  // Para armazenar os nomes dos jogadores
+            datasets: [
+                {
+                    label: "Pontos dos Jogadores",
+                    data: [],  // Para armazenar os pontos
+                    backgroundColor: "#fff",
+                    borderColor: "#F01F1A",
+                    borderWidth: 3,
+                },
+            ],
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: { legend: { labels: { color: "#ffffff" } } },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: { color: "#ffffff" },
+                    grid: { display: false },
+                },
+                x: {
+                    ticks: { color: "#ffffff" },
+                    grid: { display: false },
+                },
+            },
+        },
+    });
+    fetch('/grafico/jogadoresPontos')
+    .then(resposta => resposta.json())
+    .then(data => {
+        console.log(data); // Verifique os dados recebidos
+
+        // Mapear os dados, convertendo os pontos para números
+        const jogadores = data.map(item => item.nome_jogador);  // Nomes dos jogadores
+        const pontos = data.map(item => Number(item.pontos_totais));  // Converter pontos para número
+
+        // Atualizando o gráfico com os dados
+        graficoBarras2.data.labels = jogadores;  // Atualiza as labels com os nomes dos jogadores
+        graficoBarras2.data.datasets[0].data = pontos;  // Atualiza os dados com os pontos (como números)
+        graficoBarras2.update();  // Redesenha o gráfico
+    })
+    .catch(error => {
+        console.error('Erro ao buscar dados do gráfico de pontos dos jogadores:', error);
+    });
+
 
 fetch('/grafico/dadosGraficos')
         .then(resposta => resposta.json())
@@ -202,5 +263,9 @@ fetch('/grafico/dadosGraficos')
 
   function acessarQuiz() {
     window.location.href = `quiz.html`
+  }
+  function acessarHome() {
+    window.location.href = `index.html`
+    
   }
 </script>

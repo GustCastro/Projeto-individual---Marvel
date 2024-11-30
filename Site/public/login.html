@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Legends Marvel | Login</title>
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./js/sessao.js"></script>
 
     <link rel="stylesheet" href="css/login.css" />
@@ -67,9 +67,19 @@
     var senhaVar = senha_input.value;
 
     if (emailVar == "" || senhaVar == "") {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Preencha todos os campos",
+        color: "#f01f1a",
+        customClass: {
+          confirmButton: "custom-button", // Classe personalizada para o botão
+        },
+      });
+
       cardErro.style.display = "flex";
       mensagem_erro.innerHTML = "Preencha todos os campos";
-      finalizarAguardar();
+
       return false;
     } else {
       setInterval(sumirMensagem, 2000);
@@ -92,6 +102,13 @@
         console.log("ESTOU NO THEN DO entrar()!");
 
         if (resposta.ok) {
+          Swal.fire({
+            title: "Sucesso!",
+            text: "Login autenticado!",
+            icon: "success",
+            showConfirmButton: false,
+            color: "#f01f1a",
+          });
           console.log(resposta);
 
           resposta.json().then((json) => {
@@ -108,6 +125,13 @@
           });
         } else {
           console.log("Houve um erro ao tentar realizar o login!");
+          Swal.fire({
+            title: "Sucesso!",
+            text: "Usuario ou senha incorretas",
+            icon: "success",
+            showConfirmButton: false,
+            color: "#f01f1a",
+          });
 
           resposta.text().then((texto) => {
             console.error(texto);

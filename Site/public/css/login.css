@@ -8,6 +8,7 @@
   font-weight: 100;
   text-decoration: none;
 }
+
 html {
   scroll-behavior: smooth;
 }
@@ -45,11 +46,11 @@ html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 50px;
+  padding: 40px;
 }
 
 h2 {
-  margin-bottom: 40px; /* Ajusta o espaçamento abaixo do título */
+  margin-bottom: 20px; /* Ajusta o espaçamento abaixo do título */
   font-size: 35px;
 }
 
@@ -126,4 +127,17 @@ a {
 a:hover {
   text-decoration: underline;
   font-style: italic;
+}
+.custom-button {
+  background-color: #f01f1a; /* Cor de fundo do botão */
+  color: white; /* Cor do texto */
+  border: none; /* Remove a borda */
+  padding: 10px 20px; /* Adiciona um espaçamento interno */
+  /* Deixa as bordas arredondadas */
+  cursor: pointer; /* Define o cursor como 'pointer' */
+}
+
+.custom-button:hover {
+  background-color: black;
+  /* Cor do botão ao passar o mouse */
 }

@@ -23,8 +23,27 @@ function heroisMaisEscolhido() {
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
+function jogadoresPontos() {
+    var instrucaoSql = `
+SELECT 
+    usuario.id AS jogador_id,
+    usuario.nome AS nome_jogador,
+    SUM(quiz.pontos) AS pontos_totais
+FROM 
+    usuario
+JOIN 
+    quiz ON quiz.fkUsuario = usuario.id
+GROUP BY 
+    usuario.id
+ORDER BY 
+    pontos_totais DESC;`
+console.log("Executando a instrução SQL: \n" + instrucaoSql);
+return database.executar(instrucaoSql);
+    
+}
 
 module.exports = {
     dadosGraficos,
-    heroisMaisEscolhido
+    heroisMaisEscolhido,
+    jogadoresPontos
 };

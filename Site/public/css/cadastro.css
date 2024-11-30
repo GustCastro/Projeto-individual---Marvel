@@ -10,6 +10,20 @@
   font-weight: 100;
   text-decoration: none;
 }
+*::-webkit-scrollbar {
+  width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: black;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #ffffff;
+  border-radius: 15px;
+  border: 2px solid #f01f1a;
+  padding: 5px;
+}
 
 body {
   overflow-x: hidden;
@@ -31,9 +45,9 @@ body {
 
 .container_form {
   display: flex;
-  width: 50%;
+  width: 45%;
   height: fit-content;
-  padding: 50px;
+  padding: 45px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -143,4 +157,17 @@ button:hover {
 }
 p {
   font-size: 16px;
+}
+.custom-button {
+  background-color: #f01f1a; /* Cor de fundo do botão */
+  color: white; /* Cor do texto */
+  border: none; /* Remove a borda */
+  padding: 10px 20px; /* Adiciona um espaçamento interno */
+  /* Deixa as bordas arredondadas */
+  cursor: pointer; /* Define o cursor como 'pointer' */
+}
+
+.custom-button:hover {
+  background-color: black;
+  /* Cor do botão ao passar o mouse */
 }
