@@ -1,3 +1,4 @@
+
 var database = require("../database/config");
 
 function dadosGraficos() {
@@ -41,9 +42,35 @@ console.log("Executando a instrução SQL: \n" + instrucaoSql);
 return database.executar(instrucaoSql);
     
 }
+function mediaPontos() {
+    var instrucaoSql = `select round(avg(pontos),2) FROM quiz;
+    `
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+return database.executar(instrucaoSql);
+}
+function maiorPontuador() {
+    var instrucaoSql = `SELECT 
+    usuario.nome AS nome_jogador, 
+    SUM(quiz.pontos) AS total_pontos
+FROM 
+    usuario
+JOIN 
+    quiz ON usuario.id = quiz.fkUsuario
+GROUP BY 
+    usuario.id
+ORDER BY 
+    total_pontos DESC
+LIMIT 1;
+    `
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+return database.executar(instrucaoSql);
+    
+}
 
 module.exports = {
     dadosGraficos,
     heroisMaisEscolhido,
-    jogadoresPontos
+    jogadoresPontos,
+    mediaPontos,
+    maiorPontuador
 };

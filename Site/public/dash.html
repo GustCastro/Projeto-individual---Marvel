@@ -25,7 +25,7 @@
           <h3>
             Seja bem-vindo, 
             <span style="color: #fff;" id="b_usuario"></span>
-             Você é uma lenda
+             Você é uma lenda.
 
           </h3>
         </div>
@@ -103,7 +103,29 @@ function totalUsuarios() {
             console.error("Erro:", erro);
         });
 }
+function mediaPontos() {
+  fetch("/grafico/mediaPontos")
+    .then(function (resposta) {
+        if (resposta.ok) {
+            return resposta.json();
+        } else {
+            console.log("Dados não coletados!");
+        }
+    })
+    .then(function (json) {
+        console.log("Dados retornados:", json);  // Para inspecionar a resposta
+        if (json.length > 0) {
+            let media = json[0]['round(avg(pontos),2)'];  // Acessando a chave corretamente
+            document.getElementById("inner_média").innerText = `${media}`;
+        } else {
+            document.getElementById("inner_média").innerText = "Nenhuma média";
+        }
+    })
+    .catch(function (erro) {
+        console.error("Erro:", erro);
+    });
 
+}
 
 
 function heroisMaisEscolhido() {
@@ -128,6 +150,35 @@ function heroisMaisEscolhido() {
         });
 }
 
+function maiorPontuador() {
+  fetch("/grafico/maiorPontuador")
+    .then(function (resposta) {
+      if (resposta.ok) {
+        return resposta.json();
+      } else {
+        console.log("Dados não coletados!");
+        return null;
+      }
+    })
+    .then(function (json) {
+      console.log("Dados retornados:", json);
+      if (json && json.length > 0) {
+        // Acessa o primeiro elemento do array retornado
+        const jogador = json[0];
+        document.getElementById("inner_maior_pontuador").innerText =
+          `${jogador.nome_jogador} - ${jogador.total_pontos} pontos`;
+      } else {
+        document.getElementById("inner_maior_pontuador").innerText =
+          "Nenhum jogador encontrado.";
+      }
+    })
+    .catch(function (erro) {
+      console.error("Erro:", erro);
+    });
+}
+
+
+
 
 function exibirTotalUsers(){
   let totalUsuarios = sessionStorage.TOTAL_USUARIOS;
@@ -139,9 +190,9 @@ exibirTotalUsuarios.innerHTML = `${totalUsuarios}`;
 
 
   function exibirDadosGraficos() {
+    const ctx1 = document.getElementById('myChart1')
     const ctx2 = document.getElementById("myChart2");
-      const ctx1 = document.getElementById('myChart1')
-      if (!ctx1) {
+      if (!ctx1 || !ctx2) {
           console.error('Contexto do Canvas não encontrado');
           return;
       }
@@ -257,9 +308,6 @@ fetch('/grafico/dadosGraficos')
         });
 
   }
-  heroisMaisEscolhido()
-  exibirDadosGraficos();
-  totalUsuarios()
 
   function acessarQuiz() {
     window.location.href = `quiz.html`
@@ -268,4 +316,9 @@ fetch('/grafico/dadosGraficos')
     window.location.href = `index.html`
     
   }
+  heroisMaisEscolhido()
+  exibirDadosGraficos();
+  totalUsuarios()
+  mediaPontos()
+  maiorPontuador() 
 </script>

@@ -51,13 +51,13 @@ button {
 }
 .main {
   display: flex;
-  height: 100vh;
+  height: auto;
   width: 100%;
 }
 
 .side_bar {
   width: 20vw;
-  height: 100vh;
+  height: auto;
   background-color: #111;
   color: #ffffff;
   border-right: 3px solid #f01f1a;
@@ -157,7 +157,8 @@ button {
 .kpi2 {
   background-color: #f01f1a;
   text-align: center;
-  padding: 15px;
+
+  padding: 10px;
   border: 2px solid #ffffff;
   border-top-left-radius: 15px;
   border-bottom-right-radius: 15px;

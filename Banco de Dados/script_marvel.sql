@@ -35,6 +35,22 @@ GROUP BY
     usuario.id
 ORDER BY 
     pontos_totais DESC;
+-- média de pontos
+select round(avg(pontos),2) FROM quiz;
+
+SELECT 
+    usuario.nome AS nome_jogador, 
+    SUM(quiz.pontos) AS total_pontos
+FROM 
+    usuario
+JOIN 
+    quiz ON usuario.id = quiz.fkUsuario
+GROUP BY 
+    usuario.id
+ORDER BY 
+    total_pontos DESC
+LIMIT 1;
+
 
 
 

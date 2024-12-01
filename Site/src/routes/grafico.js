@@ -14,5 +14,11 @@ router.get("/heroisMaisEscolhido", function (req,res) {
 router.get("/jogadoresPontos", function (req,res) { 
     graficoController.jogadoresPontos(req,res);
 });
+router.get("/mediaPontos", function (req,res) { 
+    graficoController.mediaPontos(req,res);
+});
 
+router.get("/maiorPontuador", function (req,res) { 
+    graficoController.maiorPontuador(req,res);
+});
 module.exports = router;
