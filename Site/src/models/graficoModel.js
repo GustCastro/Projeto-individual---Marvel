@@ -4,10 +4,10 @@ var database = require("../database/config");
 function dadosGraficos() {
     var instrucaoSql = `
     select
-        (select count(heroiFav) from usuario where heroiFav = 'wolverine') as 'Wolverine',
-        (select count(heroiFav) from usuario where heroiFav = 'iron_man') as 'HomemDeFerro',
-        (select count(heroiFav) from usuario where heroiFav = 'homem-aranha') as 'HomemAranha',
-        (select count(heroiFav) from usuario where heroiFav = 'capitao') as 'CapitaoAmerica';
+        (select count(heroiFav) from usuario where heroiFav = 'Wolverine') as 'Wolverine',
+        (select count(heroiFav) from usuario where heroiFav = 'Homem de Ferro') as 'HomemDeFerro',
+        (select count(heroiFav) from usuario where heroiFav = 'Homem-Aranha') as 'HomemAranha',
+        (select count(heroiFav) from usuario where heroiFav = 'Capitão América') as 'CapitaoAmerica';
        
     `;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);

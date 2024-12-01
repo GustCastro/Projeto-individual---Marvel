@@ -156,15 +156,16 @@ function maiorPontuador() {
       if (resposta.ok) {
         return resposta.json();
       } else {
-        console.log("Dados não coletados!");
+        console.error("Erro na API. Status:", resposta.status);
         return null;
       }
     })
     .then(function (json) {
-      console.log("Dados retornados:", json);
-      if (json && json.length > 0) {
-        // Acessa o primeiro elemento do array retornado
-        const jogador = json[0];
+      console.log("Resposta da API:", json);
+
+      if (json) {
+        // Manipula o objeto diretamente
+        const jogador = json; // A resposta é um único objeto
         document.getElementById("inner_maior_pontuador").innerText =
           `${jogador.nome_jogador} - ${jogador.total_pontos} pontos`;
       } else {
@@ -173,7 +174,9 @@ function maiorPontuador() {
       }
     })
     .catch(function (erro) {
-      console.error("Erro:", erro);
+      console.error("Erro na requisição ou no processamento:", erro);
+      document.getElementById("inner_maior_pontuador").innerText =
+        "Erro ao carregar dados.";
     });
 }
 

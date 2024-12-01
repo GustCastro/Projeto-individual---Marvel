@@ -126,12 +126,16 @@
         } else {
           console.log("Houve um erro ao tentar realizar o login!");
           Swal.fire({
-            title: "Sucesso!",
-            text: "Usuario ou senha incorretas",
-            icon: "success",
-            showConfirmButton: false,
+            icon: "error",
+            title: "Oops...",
+            text: "Email ou senha incorretos!",
             color: "#f01f1a",
+            customClass: {
+              confirmButton: "custom-button",
+            },
           });
+          cardErro.style.display = "flex";
+          mensagem_erro.innerHTML = "Email ou senha incorretos!";
 
           resposta.text().then((texto) => {
             console.error(texto);

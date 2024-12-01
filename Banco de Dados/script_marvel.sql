@@ -10,6 +10,8 @@ senha varchar(45),
 heroiFav varchar(45)
 );	
 select * from usuario;
+
+
  -- alter table usuario rename column idUsuario to id;
 CREATE TABLE Quiz (
 idQuiz int primary key auto_increment,
