@@ -42,7 +42,7 @@ html {
   display: flex;
   width: 45%;
   color: #fff;
-  background-color: black;
+  background-color: #111;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -129,15 +129,33 @@ a:hover {
   font-style: italic;
 }
 .custom-button {
-  background-color: #f01f1a; /* Cor de fundo do botão */
-  color: white; /* Cor do texto */
-  border: none; /* Remove a borda */
-  padding: 10px 20px; /* Adiciona um espaçamento interno */
-  /* Deixa as bordas arredondadas */
-  cursor: pointer; /* Define o cursor como 'pointer' */
+  background-color: #f01f1a;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+
+  cursor: pointer;
 }
 
 .custom-button:hover {
   background-color: black;
-  /* Cor do botão ao passar o mouse */
+}
+.input_container {
+  position: relative;
+  width: 100%;
+}
+
+.input_container input {
+  width: 100%;
+  padding-right: 40px; /* Garante espaço para o ícone dentro do input */
+}
+
+.input_icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
 }

@@ -28,6 +28,7 @@
             id="mensagem_erro"
           ></span>
         </div>
+
         <h2>Acesse sua conta, <span class="title">Lenda!</span></h2>
         <div class="div_email">
           <label for="email">Email</label>
@@ -40,12 +41,21 @@
         </div>
         <div class="div_senha">
           <label>Senha</label>
-          <input
-            type="password"
-            id="senha_input"
-            placeholder="Sua senha"
-            required
-          />
+          <div class="input_container">
+            <input
+              type="password"
+              id="senha_input"
+              placeholder="Sua senha"
+              required
+            />
+            <img
+              onclick="aparecerSenha()"
+              id="olho"
+              src="https://img.icons8.com/?size=100&id=WBtbqQY9mcdJ&format=png&color=FFFFFF"
+              alt="Mostrar senha"
+              class="input_icon"
+            />
+          </div>
         </div>
         <br />
         <button class="button" onclick="entrar()">Entrar</button>
@@ -147,6 +157,20 @@
       });
 
     return false;
+  }
+  function aparecerSenha() {
+    const senha = document.getElementById("senha_input");
+    const olho = document.getElementById("olho");
+
+    if (senha.type === "password") {
+      senha.type = "text";
+      olho.src =
+        "https://img.icons8.com/?size=100&id=121539&format=png&color=FFFFFF";
+    } else {
+      senha.type = "password"; // Oculta a senha
+      olho.src =
+        "https://img.icons8.com/?size=100&id=WBtbqQY9mcdJ&format=png&color=FFFFFF";
+    }
   }
 
   function sumirMensagem() {
