@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="stylesheet" href="css/quiz.css" />
+    <link
+      rel="shortcut icon"
+      href="assets/imgs/android-chrome-512x512.png"
+      type="image/x-icon"
+    />
 
     <title>Quiz JavaScript</title>
   </head>
@@ -128,6 +133,7 @@
         break;
       case performance >= 50:
         message = "Bom";
+        
         break;
       default:
         message = "Pode melhorar :(";
@@ -135,7 +141,7 @@
 
     $questionsContainer.innerHTML = `
     <p class="final-message">
-      Você acertou ${pontos} de ${totalQuestions} questões! performance de ${performance}%
+      Você acertou ${pontos} de ${totalQuestions} questões! <br> Performance de ${performance}%.
       <span>Resultado: ${message}</span>
     </p>
     <button 

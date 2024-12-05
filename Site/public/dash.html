@@ -6,6 +6,11 @@
     <title>Dashboard</title>
     <link rel="stylesheet" href="css/dash.css" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link
+      rel="shortcut icon"
+      href="assets/imgs/android-chrome-512x512.png"
+      type="image/x-icon"
+    />
     
   </head>
   <body>
@@ -218,7 +223,7 @@ exibirTotalUsuarios.innerHTML = `${totalUsuarios}`;
         plugins: {
             legend: {
                 labels: {
-                    color: '#ffffff'  // Cor das fontes da legenda
+                    color: '#ffffff' 
                 }
             }
         },
@@ -226,18 +231,18 @@ exibirTotalUsuarios.innerHTML = `${totalUsuarios}`;
             y: {
                 beginAtZero: true,
                 ticks: {
-                    color: '#ffffff',  // Cor das fontes do eixo Y
+                    color: '#ffffff',  
                 },
                 grid: {
-                    display: false  // Desativa a grade do eixo Y
+                    display: false  
                 }
             },
             x: {
                 ticks: {
-                    color: '#ffffff',  // Cor das fontes do eixo X
+                    color: '#ffffff', 
                 },
                 grid: {
-                    display: false  // Desativa a grade do eixo X
+                    display: false  
                 }
             }
         }
@@ -278,7 +283,7 @@ exibirTotalUsuarios.innerHTML = `${totalUsuarios}`;
     fetch('/grafico/jogadoresPontos')
     .then(resposta => resposta.json())
     .then(data => {
-        console.log(data); // Verifique os dados recebidos
+        console.log(data);
 
         // Mapear os dados, convertendo os pontos para números
         const jogadores = data.map(item => item.nome_jogador);  // Nomes dos jogadores

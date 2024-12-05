@@ -1,1 +1,4 @@
-ssh -p 2222 sptech@192.168.67.184
+ssh -p 2222 sptech@192.168.67.184 - ip muda
+
+mysql -u aluno -p 
+Senha: Sptech@2024
