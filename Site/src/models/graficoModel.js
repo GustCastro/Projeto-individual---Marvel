@@ -29,7 +29,7 @@ function jogadoresPontos() {
 SELECT 
     usuario.id AS jogador_id,
     usuario.nome AS nome_jogador,
-    SUM(quiz.pontos) AS pontos_totais
+    SUM(Quiz.pontos) AS pontos_totais
 FROM 
     usuario
 JOIN 
@@ -51,7 +51,7 @@ return database.executar(instrucaoSql);
 function maiorPontuador() {
     var instrucaoSql = `SELECT 
     usuario.nome AS nome_jogador, 
-    SUM(quiz.pontos) AS total_pontos
+    SUM(Quiz.pontos) AS total_pontos
 FROM 
     usuario
 JOIN 
