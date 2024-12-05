@@ -33,7 +33,7 @@ SELECT
 FROM 
     usuario
 JOIN 
-    quiz ON quiz.fkUsuario = usuario.id
+    Quiz ON Quiz.fkUsuario = usuario.id
 GROUP BY 
     usuario.id
 ORDER BY 
@@ -43,7 +43,7 @@ return database.executar(instrucaoSql);
     
 }
 function mediaPontos() {
-    var instrucaoSql = `select round(avg(pontos),2) FROM quiz;
+    var instrucaoSql = `select round(avg(pontos),2) FROM Quiz;
     `
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
 return database.executar(instrucaoSql);
@@ -55,7 +55,7 @@ function maiorPontuador() {
 FROM 
     usuario
 JOIN 
-    quiz ON usuario.id = quiz.fkUsuario
+    Quiz ON usuario.id = Quiz.fkUsuario
 GROUP BY 
     usuario.id
 ORDER BY 
