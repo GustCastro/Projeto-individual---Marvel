@@ -123,18 +123,18 @@ button {
 .container_graficos {
   display: flex;
   flex-wrap: wrap; /* Permite que os gráficos se reorganizem em telas pequenas */
-  justify-content: space-evenly; /* Espaçamento uniforme entre gráficos */
-  gap: 20px; /* Espaçamento entre os gráficos */
+  justify-content: space-evenly; 
+  gap: 20px;
   background-color: #111111c9;
   border-radius: 15px;
   padding: 25px;
 }
 .grafico {
   flex: 1; /* Cada gráfico ocupa a mesma largura */
-  background-color: #f01f1a; /* Fundo para destacar */
+  background-color: #f01f1a; 
   border-radius: 10px;
   padding: 5px;
-  min-width: 350px; /* Define largura mínima */
+  min-width: 350px; 
 }
 .grafico canvas {
   width: 100%;
@@ -146,7 +146,7 @@ button {
   display: flex;
   flex-wrap: wrap; /* Permite adaptação ao espaço disponível */
   gap: 20px;
-  justify-content: space-between; /* Espaçamento igual entre itens */
+  justify-content: space-between; 
   margin-bottom: 50px;
 }
 

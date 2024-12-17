@@ -261,7 +261,7 @@ html {
   color: black;
   padding: 20px;
   background-color: black;
-  overflow: hidden; /* Esconde conteúdo além da altura definida */
+  overflow: hidden;
   transition: all 0.5s ease;
 }
 .sobre_wolverine p,
@@ -306,7 +306,7 @@ html {
   padding: 60px;
   width: 100%;
   height: 120vh;
-  margin-bottom: 120px; /* Espaçamento entre os containers */
+  margin-bottom: 120px;
   background-color: #f01f1a;
   position: relative;
   border-top: 6px solid #ffffff;
@@ -323,16 +323,16 @@ html {
   border: solid 6px #ffffff;
   width: 40vw;
   height: 100vh;
-  color: #ffffff; /* Cor do texto em branco */
-  background-color: black; /* Fundo preto */
-  padding: 20px; /* Padding interno para separar o conteúdo das bordas */
+  color: #ffffff;
+  background-color: black;
+  padding: 20px;
   border-top-left-radius: 30px;
   border-bottom-right-radius: 30px;
 }
 .texto_curiosidades h2,
 .texto_curiosidades h3 {
-  color: #f01f1a; /* Cor vermelha para h2 e h3 */
-  margin-bottom: 10px; /* Espaçamento inferior entre os títulos */
+  color: #f01f1a;
+  margin-bottom: 10px;
 }
 .texto_curiosidades h2 {
   background-color: #f01f1a;
@@ -360,8 +360,8 @@ html {
 }
 
 .texto_curiosidades p {
-  margin-bottom: 10px; /* Espaçamento entre os parágrafos */
-  color: white; /* Cor dos parágrafos em branco */
+  margin-bottom: 10px;
+  color: white;
   font-size: 16px;
 }
 .img_hero {
@@ -385,9 +385,9 @@ html {
 }
 
 footer {
-  background-color: #111; /* Cor escura para o footer */
+  background-color: #111;
   padding: 20px 0;
-  color: #fff; /* Texto branco */
+  color: #fff;
   border-top: 3px solid #f01f1a;
 }
 
@@ -399,7 +399,7 @@ footer {
 }
 
 .img_footer {
-  width: 10%; /* A largura da div da imagem */
+  width: 10%;
   margin-left: 2%;
 }
 
@@ -409,25 +409,25 @@ footer {
 }
 
 .container_footer {
-  flex: 1; /* Ocupa todo o espaço disponível */
+  flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centraliza horizontalmente */
-  justify-content: center; /* Centraliza verticalmente */
-  text-align: center; /* Centraliza textos dentro */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .footer_social h2 {
-  margin-bottom: 8px; /* Espaçamento entre o nome e os ícones */
+  margin-bottom: 8px;
   font-size: 22px;
 }
 
 .footer_social ul {
   list-style: none;
   display: flex;
-  gap: 20px; /* Espaçamento entre os ícones */
+  gap: 20px;
   padding: 0;
-  margin: 0; /* Remove espaçamentos padrão */
+  margin: 0;
 }
 
 .footer_social li {
@@ -435,11 +435,11 @@ footer {
 }
 
 .footer_social img {
-  width: 30px; /* Tamanho uniforme dos ícones */
+  width: 30px;
   height: 30px;
   transition: all 0.3s ease;
 }
 
 .footer_social img:hover {
-  transform: scale(1.2); /* Efeito de zoom ao passar o mouse */
+  transform: scale(1.2);
 }

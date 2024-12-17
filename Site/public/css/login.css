@@ -50,14 +50,14 @@ html {
 }
 
 h2 {
-  margin-bottom: 20px; /* Ajusta o espaçamento abaixo do título */
+  margin-bottom: 20px; 
   font-size: 35px;
 }
 
 .div_email,
 .div_senha {
   width: 100%;
-  margin-bottom: 20px; /* Aumenta o espaçamento entre os campos */
+  margin-bottom: 20px; 
 }
 
 label {
