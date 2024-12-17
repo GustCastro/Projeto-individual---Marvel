@@ -9,6 +9,20 @@
   font-style: normal;
   text-decoration: none;
 }
+*::-webkit-scrollbar {
+  width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: black;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #ffffff;
+  border-radius: 15px;
+  border: 2px solid #f01f1a;
+  padding: 5px;
+}
 .nav_container {
   display: flex;
   width: 100%;
@@ -81,7 +95,7 @@ button {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 }
 
 .options div {
@@ -123,7 +137,7 @@ button {
 .container_graficos {
   display: flex;
   flex-wrap: wrap; /* Permite que os gráficos se reorganizem em telas pequenas */
-  justify-content: space-evenly; 
+  justify-content: space-evenly;
   gap: 20px;
   background-color: #111111c9;
   border-radius: 15px;
@@ -131,10 +145,10 @@ button {
 }
 .grafico {
   flex: 1; /* Cada gráfico ocupa a mesma largura */
-  background-color: #f01f1a; 
+  background-color: #f01f1a;
   border-radius: 10px;
   padding: 5px;
-  min-width: 350px; 
+  min-width: 350px;
 }
 .grafico canvas {
   width: 100%;
@@ -146,7 +160,7 @@ button {
   display: flex;
   flex-wrap: wrap; /* Permite adaptação ao espaço disponível */
   gap: 20px;
-  justify-content: space-between; 
+  justify-content: space-between;
   margin-bottom: 50px;
 }
 
