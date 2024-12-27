@@ -22,10 +22,16 @@ foreign key (fkUsuario) references usuario (id)
 select * from quiz;
 select * from usuario;
 
+INSERT INTO quiz (pontos, fkUsuario) VALUES
+(7,3),
+(4,1),
+(8,2),
+(2,4);
+
 
 
 SET FOREIGN_KEY_CHECKS = 0;
-TRUNCATE TABLE usuario;
+TRUNCATE TABLE quiz;
 SET FOREIGN_KEY_CHECKS = 1;
 
 
@@ -45,6 +51,8 @@ INSERT INTO usuario (nome, email, senha, heroiFav) VALUES
 ('Harison', 'hari@gmail.com', 'hari12345@', 'Homem de Ferro'),
 ('João', 'joão@gmail.com', 'joao12345@', 'Homem de Ferro'),
 ('Isabella', 'isa@gmail.com', 'isa12345@', 'Homem-Aranha');
+
+
 
 
 
